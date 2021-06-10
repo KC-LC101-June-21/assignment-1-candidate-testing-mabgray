@@ -8,9 +8,16 @@ const reply = require('readline-sync');
 let question = "Who was the first American woman in space?   ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions;
-let correctAnswers;
-let candidateAnswers;
+
+let questions = ["Who was the first American woman in space?",
+ "True or false: 5 kilometer == 5000 meters?" , "(5 + 3)/2 * 10 = ?",
+  "Given the array [8, 'Orbit','Trajectory', 45], what entry is at index 2?",
+    "What is the minimum crew size for the ISS?"];
+
+
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+
+let candidateAnswers = [];
 
 
 function askForName() {
@@ -22,7 +29,14 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  candidateAnswer = reply.question(question);
+  //candidateAnswer = reply.question(question);
+  
+  for(let i = 0; i < questions.length; i++){
+      let input = reply.question(questions[i] +": ");
+     candidateAnswers.push(input);
+     
+    
+  }
 
 
 }
@@ -32,13 +46,34 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
 
-  if(correctAnswer === candidateAnswer) {
+ /* if(correctAnswer === candidateAnswer) {
       console.log("Good job!");
   } else {
       console.log("Your answer is incorrect.");
+  } */
+  let correct = 0;
+  let total = candidateAnswers.length;
+  for(let i = 0; i < total; i++) {
+    if(candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
+      console.log(`your answer of ${candidateAnswers[i]} is correct`);
+      correct++;
+    } else {
+      console.log(`your answer of ${candidateAnswers[i]} incorrect the correct answer is ${correctAnswers[i]}`);
+    }
   }
-  let grade;
   
+
+
+  let grade = correct/total * 100;
+ 
+  if(grade > 80) {
+    console.log(`${candidateName} you have passed the quiz with ${grade}%`);
+  }
+  else {
+    console.log(`${candidateName} you have failed the quiz with ${grade}%`);
+  }
+  
+
 
   return grade;
 }
