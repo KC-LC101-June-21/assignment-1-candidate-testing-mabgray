@@ -10,7 +10,7 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 
 let questions = ["Who was the first American woman in space? ",
- "True or false: 5 kilometer == 5000 meters? " , "(5 + 3)/2 * 10 = ? ",
+ "True or false: 5 kilometer == 5000 meters? " , "(5 + 3)/2 * 10 = ?: ",
   "Given the array [8, 'Orbit','Trajectory', 45], what entry is at index 2? ",
     "What is the minimum crew size for the ISS? "];
 
@@ -32,12 +32,9 @@ function askQuestion() {
   //candidateAnswer = reply.question(question);
   
   for(let i = 0; i < questions.length; i++){
-    console.log((i + 1) + ") " + questions[i]);//only adds the number and )
-    let input = reply.question("Your Answer: ");
-    console.log("Correct Answer: " + correctAnswers[i] + "\n" );
-    
+    let input = reply.question(questions[i]);
     candidateAnswers.push(input);
-     
+   
     
   }
 
@@ -54,15 +51,19 @@ function gradeQuiz(candidateAnswers) {
   } else {
       console.log("Your answer is incorrect.");
   } */
+
+
+  
   let correct = 0;
   let total = candidateAnswers.length;
   for(let i = 0; i < total; i++) {
+    console.log((i + 1) + ")" + questions[i]);
+    console.log("Your Answer: " + candidateAnswers[i]);
+    console.log("Correct Answer: " + correctAnswers[i]);
     if(candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
       //console.log(`your answer of ${candidateAnswers[i]} is correct`);
       correct++;
-    } else {
-      //console.log(`your answer of ${candidateAnswers[i]} incorrect the correct answer is ${correctAnswers[i]}`);
-    }
+    } 
   }
   
 
