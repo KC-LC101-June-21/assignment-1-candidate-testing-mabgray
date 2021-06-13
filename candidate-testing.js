@@ -70,7 +70,7 @@ console.log("Candidate Name: " + candidateName);
 
 
   let grade = correct/total * 100;
-  console.log(`\n>>> Overall Grade: ${grade}% (${correct} out of ${total} responses correct) <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${correct} out of ${total} responses correct) <<<`);
 
  
   if(grade >= 80) {
