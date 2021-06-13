@@ -52,7 +52,7 @@ function gradeQuiz(candidateAnswers) {
       console.log("Your answer is incorrect.");
   } */
 
-
+console.log("Candidate Name: " + candidateName);
   
   let correct = 0;
   let total = candidateAnswers.length;
