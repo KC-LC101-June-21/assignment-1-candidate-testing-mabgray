@@ -51,7 +51,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
       console.log("Your answer is incorrect.");
   } */
-
+console.log("\n");
 console.log("Candidate Name: " + candidateName);
   
   let correct = 0;
@@ -60,6 +60,7 @@ console.log("Candidate Name: " + candidateName);
     console.log((i + 1) + ") " + questions[i]);
     console.log("Your Answer: " + candidateAnswers[i]);
     console.log("Correct Answer: " + correctAnswers[i]);
+    console.log("\n");
     if(candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
       //console.log(`your answer of ${candidateAnswers[i]} is correct`);
       correct++;
