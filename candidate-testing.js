@@ -59,8 +59,8 @@ console.log("Candidate Name: " + candidateName);
   for(let i = 0; i < total; i++) {
     console.log((i + 1) + ") " + questions[i]);
     console.log("Your Answer: " + candidateAnswers[i]);
-    console.log("Correct Answer: " + correctAnswers[i]);
-    console.log("\n");
+    console.log("Correct Answer: " + correctAnswers[i] + "\n");
+    //console.log("\n");
     if(candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
       //console.log(`your answer of ${candidateAnswers[i]} is correct`);
       correct++;
