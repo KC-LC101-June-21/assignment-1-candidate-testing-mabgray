@@ -57,7 +57,7 @@ function gradeQuiz(candidateAnswers) {
   let correct = 0;
   let total = candidateAnswers.length;
   for(let i = 0; i < total; i++) {
-    console.log((i + 1) + ")" + questions[i]);
+    console.log((i + 1) + ") " + questions[i]);
     console.log("Your Answer: " + candidateAnswers[i]);
     console.log("Correct Answer: " + correctAnswers[i]);
     if(candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
